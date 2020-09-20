@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const MAX_URL_LENGTH = 2048;
 
 module.exports.MAX_URL_LENGTH = MAX_URL_LENGTH;
-module.exports.DEFAULT_BASE_URL = '/pixel.png';
+module.exports.DEFAULT_BASE_URL = 'https://monitoring.host/pixel.png';
 
 /* istanbul ignore next */
 module.exports.hashString = (string) => crypto.createHash('md5').update(string).digest('hex');
