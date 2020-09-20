@@ -25,7 +25,7 @@ test('trancate long selector to get safe-length url', () => {
 });
 
 test('hash selectors', async () => {
-  const randomSelector = Math.random().toString(36);
+  const randomSelector = Math.random().toString(36).substring(1);
   const hash = utils.hashString(randomSelector);
   const result = await process(`${randomSelector} { color: red; }`, { hash: true });
 
