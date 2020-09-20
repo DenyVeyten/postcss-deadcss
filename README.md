@@ -15,7 +15,7 @@ Implements technique from https://csswizardry.com/2018/01/finding-dead-css/
 ```css
 /* Output example */
 .foo {
-    background-image: url('/pixel.png?.foo');
+    background-image: url('https://monitoring.host/pixel.png?.foo');
     color: red;
 }
 ```
@@ -42,7 +42,7 @@ module.exports = {
   plugins: [
     require('autoprefixer'),
 +   require('postcss-deadcss')({
-+     url: 'https://transparent.image.host/path/to/image.png',
++     url: 'https://monitoring.host/pixel.png',
 +     hash: true,
 +   }),
   ]
@@ -51,11 +51,11 @@ module.exports = {
 
 Available options:
 
-| Option | Type (default value)    | Description |
-|--------|-------------------------|-------------|
-| url    | string (`'/pixel.png'`) | Base url with transparent image to load |
-| append | boolean (`false`)       | To append background-image declaration instead of prepend it (this will break styling during testing, but is not required manual checks if background-image has been overwritten by other declaration below in the same rule or not)
-| hash   | boolean (`false`)       | To use md5 hashes for background image url instead of selectors, otherwise to use URL ecoded selectors |
+| Option | <nobr>Type (default value)</nobr> | Description |
+|--------|-----------------------------------|-------------|
+| url    | string (`'https://monitoring.host/pixel.png'`) | Base url with transparent image to load |
+| hash   | boolean (`false`)                 | To use md5 hashes for background image url instead of selectors, otherwise to use URL ecoded selectors |
+| append | boolean (`false`)                 | To append background-image declaration instead of prepend it (this will break styling during testing, but is not required manual checks if background-image has been overwritten by other declaration below in the same rule or not)
 
 [official docs]: https://github.com/postcss/postcss#usage
 
