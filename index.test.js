@@ -16,14 +16,6 @@ test('apped bg-image to rule', async () => {
   expect(result.css).toBe(`a { color: red; background-image: url('${utils.DEFAULT_BASE_URL}?a'); }`);
 });
 
-test('trancate long selector to get safe-length url', () => {
-  const baseUrl = 'base_url';
-  const longSelector = '.very .long .selector '.repeat(1000);
-  const result = utils.getSafeUrl(baseUrl, longSelector);
-
-  expect(result).toBe(`${baseUrl}?${longSelector}`.substring(0, utils.MAX_URL_LENGTH));
-});
-
 test('hash selectors', async () => {
   const randomSelector = Math.random().toString(36).substring(1);
   const hash = utils.hashString(randomSelector);
