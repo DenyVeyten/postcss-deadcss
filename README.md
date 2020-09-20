@@ -1,8 +1,7 @@
 # postcss-deadcss
-[PostCSS] plugin that helps you to find dead css in your project.
+[PostCSS] plugin that helps to find dead css in a project.
 
 Implements technique from https://csswizardry.com/2018/01/finding-dead-css/
-
 
 [PostCSS]: https://github.com/postcss/postcss
 
@@ -42,14 +41,17 @@ and set this plugin in settings.
 module.exports = {
   plugins: [
     require('autoprefixer'),
-+   require('postcss-deadcss')(options),
++   require('postcss-deadcss')({
++     url: 'https://transparent.image.host/path/to/image.png',
++     hash: true,
++   }),
   ]
 }
 ```
 
 Available options:
 
-| option | type (default value)    | description |
+| Option | Type (default value)    | Description |
 |--------|-------------------------|-------------|
 | url    | string (`'/pixel.png'`) | Base url with transparent image to load |
 | append | boolean (`false`)       | To append background-image declaration instead of prepend it (this will break styling during testing, but is not required manual checks if background-image has been overwritten by other declaration below in the same rule or not)
