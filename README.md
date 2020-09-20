@@ -56,7 +56,6 @@ Available options:
 | url    | string (`'/pixel.png'`) | Base url with transparent image to load |
 | append | boolean (`false`)       | To append background-image declaration instead of prepend it (this will break styling during testing, but is not required manual checks if background-image has been overwritten by other declaration below in the same rule or not)
 | hash   | boolean (`false`)       | To use md5 hashes for background image url instead of selectors, otherwise to use URL ecoded selectors |
-| dest   | string (`''`)           | Folder to put processed css files. otherwise css files will be modified in place. Relative to `process.cwd()`. NOTE: to properly output css files |
 
 [official docs]: https://github.com/postcss/postcss#usage
 
