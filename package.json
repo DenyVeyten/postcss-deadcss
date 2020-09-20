@@ -1,0 +1,73 @@
+{
+  "name": "postcss-deadcss",
+  "version": "1.0.0",
+  "description": "Plugin that helps you to find dead css in your project",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenyVeyten/postcss-deadcss.git"
+  },
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "dead css",
+    "optimisation",
+    "performance"
+  ],
+  "author": "Nikolay Latyshev <nikolaylatyshev@yahoo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DenyVeyten/postcss-deadcss/issues"
+  },
+  "homepage": "https://github.com/DenyVeyten/postcss-deadcss#readme",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.0.1",
+    "husky": "^4.3.0",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.4.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017
+    },
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "airbnb-base",
+      "plugin:jest/recommended"
+    ]
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageThreshold": {
+      "global": {
+        "statements": 100
+      }
+    }
+  },
+  "dependencies": {}
+}
