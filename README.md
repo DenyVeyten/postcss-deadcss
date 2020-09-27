@@ -66,7 +66,8 @@ Available options:
 | hash   | boolean | `false` | To use md5 hashes of seloctors for background image urls, otherwise to use URL ecoded selectors |
 | append | boolean | `false` | To append background-image declaration instead of prepend it (this will break styling during testing, but is not required manual checks if background-image has been overwritten by other declaration below in the same rule or not)
 
-**Step 4:** Deploy css and transparent image and start monitoring requests to the image. After considered amount of time you can remove css rules that hasn't been requested or rewrite code when css rules are used too unfrequently. **Enjoy the results!** :tada:
+**Step 4:** Deploy css and [transparent image] and start monitoring requests to the image. After considered amount of time you can remove css rules that hasn't been requested or rewrite code when css rules are used too unfrequently. **Enjoy the results!** :tada:
 
 [official docs]: https://github.com/postcss/postcss#usage
 [postcss-cli]: https://github.com/postcss/postcss-cli
+[transparent image]: pixel.png
