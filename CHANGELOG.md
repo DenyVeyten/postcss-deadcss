@@ -11,4 +11,3 @@ Yay! Everything is realeased so far!
 ## [1.0.0] - 2020-09-20
 ### Added
 - Initial plugin code.
--
