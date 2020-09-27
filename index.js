@@ -10,13 +10,11 @@ module.exports = ({
 
   return {
     postcssPlugin: 'postcss-deadcss',
-    Root(root) {
-      root.walkRules((rule) => {
-        const safeUrlComponent = getSafeUrlComponent(rule.selector);
-        const safeUrl = utils.getSafeUrl(url, safeUrlComponent);
+    Rule(rule) {
+      const safeUrlComponent = getSafeUrlComponent(rule.selector);
+      const safeUrl = utils.getSafeUrl(url, safeUrlComponent);
 
-        rule[insertFnName]({ prop: 'background-image', value: `url('${safeUrl}')` });
-      });
+      rule[insertFnName]({ prop: 'background-image', value: `url('${safeUrl}')` });
     },
   };
 };
